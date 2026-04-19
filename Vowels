@@ -1,0 +1,82 @@
+- Count total vowels in sentence.
+    function countVowels(sentence) {
+      const vowels = { a: true, e: true, i: true, o: true, u: true };
+      let count = 0;
+    
+      for (const char of sentence.toLowerCase()) {
+        if (vowels[char]) {
+          count++;
+        }
+      }
+    
+      return count;
+    }
+
+- Count each vowels in sentence.
+    function countVowelFrequency(sentence) {
+      const freq = {
+        a: 0,
+        e: 0,
+        i: 0,
+        o: 0,
+        u: 0
+      };
+    
+      for (const char of sentence.toLowerCase()) {
+        if (freq[char] !== undefined) {
+          freq[char]++;
+        }
+      }
+    
+      return freq;
+    }
+
+- Count number of unique vowel in a sentence.
+    function countUniqueVowels(sentence) {
+      const seen = {
+        a: false,
+        e: false,
+        i: false,
+        o: false,
+        u: false
+      };
+    
+      let count = 0;
+    
+      for (const char of sentence.toLowerCase()) {
+        if (seen.hasOwnProperty(char) && !seen[char]) {
+          seen[char] = true;
+          count++;
+        }
+      }
+    
+      return count;
+    }
+
+
+- Return vowels that are missing from the sentence.
+    function missingVowels(sentence) {
+      const seen = {
+        a: false,
+        e: false,
+        i: false,
+        o: false,
+        u: false
+      };
+    
+      // Mark vowels found in sentence
+      for (const char of sentence.toLowerCase()) {
+        if (seen[char] === false) {
+          seen[char] = true;
+        }
+      }
+    
+      // Collect missing vowels
+      const result = [];
+    
+    for (const vowel of ['a', 'e', 'i', 'o', 'u']) {
+    if (!seen[vowel]) result.push(vowel);
+    }
+    
+      return result;
+    }
