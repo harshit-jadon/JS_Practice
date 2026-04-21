@@ -1,5 +1,34 @@
-1-> Find All Substrings of a Given String
+1-> Find the Most Frequent Character
+      function mostFrequentcharacter(words){
+          const freq = {};
+          let maxCount = 0;
+          let maxChar = '';
+          for(let word of words){
+              freq[word] = (freq[word] || 0) + 1
+              
+              if(freq[word] > maxCount){
+                  maxCount = freq[word]
+                  maxChar = word
+              }
+          }
+          console.log(freq)
+          return maxChar
+      }
+
+console.log(mostFrequentcharacter('abcdaabbbccaaabbbccadccbaaddb'))
+
 2-> Find All Substrings of a Given String 
+    function allSubString(words){
+        let result = [];
+        for(let i=0; i < words.length; i++){
+            for(let p=i+1; p <= words.length; p++){
+                result.push(words.slice(i, p))
+            }
+        }
+        return result;
+    }
+    
+    console.log(allSubString('abcd'))
 
 3-> Longest Substring Without Repeating Characters
       function lengthOfLongestSubstring(s) {
