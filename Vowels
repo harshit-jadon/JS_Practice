@@ -1,4 +1,4 @@
-- Count total vowels in sentence.
+1-> Count total vowels in sentence.
     function countVowels(sentence) {
       const vowels = { a: true, e: true, i: true, o: true, u: true };
       let count = 0;
@@ -12,7 +12,7 @@
       return count;
     }
 
-- Count each vowels in sentence.
+2-> Count each vowels in sentence.
     function countVowelFrequency(sentence) {
       const freq = {
         a: 0,
@@ -23,15 +23,15 @@
       };
     
       for (const char of sentence.toLowerCase()) {
-        if (freq[char] !== undefined) {
-          freq[char]++;
-        }
+        if (freq.hasOwnProperty(char) ) {
+          freq[char] =  (freq[char] || 0 ) + 1;
+          }
       }
     
       return freq;
     }
 
-- Count number of unique vowel in a sentence.
+3-> Count number of unique vowel in a sentence.
     function countUniqueVowels(sentence) {
       const seen = {
         a: false,
@@ -54,7 +54,7 @@
     }
 
 
-- Return vowels that are missing from the sentence.
+4-> Return vowels that are missing from the sentence.
     function missingVowels(sentence) {
       const seen = {
         a: false,
